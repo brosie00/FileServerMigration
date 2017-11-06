@@ -1,0 +1,33 @@
+ 
+
+DirectoryCreatedDate  : 5/9/2017 2:35:34 PM
+SOINET_Path       : C:\Users\SWWCB\Documents\WindowsPowershell\Modules\SOINET.Dir
+SOIDPS_Path     : \\fileserver\groups\1234_Study
+DirectoryID           : 3140bbe5-217f-4ade-afd3-aa960f9c51d4
+DirectoryLastModified : 9/27/2017 3:06:12 PM
+HashofRecord          : 245245234523
+
+　
+　
+This Directory contains the following subdirectories
+This Directory contains the following files
+
+Name                                                                            CreationTime                                                                  
+----                                                                            ------------                                                                  
+DirectoryMetaData.txt                                                           9/27/2017 4:04:23 PM                                                          
+Get-DirectoryData.ps1                                                           5/9/2017 2:35:34 PM                                                           
+Get-DirectoryStatistics.ps1                                                     5/9/2017 2:35:34 PM                                                           
+Get-SOIDirectoryMetaData.ps1                                                    5/9/2017 2:35:34 PM                                                           
+New-SOIAdGroup.ps1                                                              5/9/2017 2:35:34 PM                                                           
+Script.ps1                                                                      5/9/2017 2:35:34 PM                                                           
+Script.Tests.ps1                                                                9/27/2017 2:11:32 PM                                                          
+Set-FileAccess.ps1                                                              5/9/2017 2:35:34 PM                                                           
+Show-Acl.ps1                                                                    5/9/2017 2:35:34 PM                                                           
+SOINET.Dir.psd1                                                                 5/9/2017 2:35:34 PM                                                           
+SOINET.Dir.psm1                                                                 5/9/2017 2:35:34 PM                                                           
+Untitled1.ps1                                                                   5/9/2017 2:35:34 PM                                                           
+Untitled4.ps1                                                                   5/9/2017 2:35:34 PM                                                           
+
+　
+In addition to be able to read the contents of this directory, the following members and groups may modify the contents of this directory.
+ 
