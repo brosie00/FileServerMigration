@@ -16,7 +16,7 @@
 
 #>
 
-Function Set-FileAccess {
+Function Set-FsmFileAccess {
 
     param ( 
         [Parameter(Mandatory = $true, 
