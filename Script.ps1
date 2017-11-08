@@ -1,4 +1,4 @@
- <#
+﻿<#
 .SYNOPSIS
     Run this script against a directory to create a Directory Metadata file
 .DESCRIPTION
@@ -53,7 +53,7 @@ if (-not( $CurrentFileContentsHash.DirectoryCreatedDate ) ) {[datetime]$CurrentF
 
 #endregion
 
-　
+
 #region Convert the Hash table to an object so that it formats correctly as text
 
 New-Object -TypeName PsObject -Property $CurrentFileContentsHash |
@@ -97,4 +97,3 @@ foreach($Group in $a) {
     $Group.Account
  }
 
- 

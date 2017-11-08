@@ -1,4 +1,5 @@
- 
+﻿
+
 
 <#
 .Synopsis
@@ -40,8 +41,8 @@ Function Set-FsmFileAccess {
     )
 
     $AccessRight = switch ($Access) {
-        'Change'      {"C"}
-        'ReadOnly'    {"R"}
+        'Change' {"C"}
+        'ReadOnly' {"R"}
         'FullControl' {"F"}
     }
     <#

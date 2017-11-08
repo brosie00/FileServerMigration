@@ -1,4 +1,4 @@
- 
+﻿
 
 function New-ADGroup {
  [cmdletbinding()]
@@ -34,4 +34,3 @@ function New-ADGroup {
 }
 
 
- 

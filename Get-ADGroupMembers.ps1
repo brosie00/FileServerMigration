@@ -1,4 +1,4 @@
- function Get-ADGroupMembers {
+﻿function Get-ADGroupMembers {
     <#
     .SYNOPSIS
                   Return all group members for specified groups.
@@ -76,4 +76,3 @@
             $ct = $grp = $null
     }
 }
- 
