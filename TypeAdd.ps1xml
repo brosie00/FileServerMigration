@@ -1,0 +1,23 @@
+ 
+[xml]$xml = @"
+<?xml version="1.0" encoding="utf-8" ?>
+<Types>
+   <Type>
+        <Name>Microsoft.HyperV.PowerShell.VirtualMachine</Name>
+         <Members>
+            <PropertySet>
+                <Name>PSConfig</Name>
+                <ReferencedProperties>
+                    <Name>VMName</Name>
+                    <Name>State</Name>
+                    <Name>DynamicMemoryEnabled</Name>
+                    <Name>DiskPath</Name>
+                    <Name>TestVHD</Name>
+                    <Name>ConfigurationFile</Name>
+                </ReferencedProperties>
+            </PropertySet>
+        </Members>
+    </Type>
+</Types>
+"@
+ 
