@@ -20,12 +20,31 @@ IsContainer      : True
 Show-ACL -Path $pwd | select Path, Account, IsContainer, FullControl, Modify, ReadAndExecute, IsInherited, InheritanceFlags | Sort-Object -Property Modify | ft -GroupBy Modify #>
 function New-FsmAccessDescription {
 [CmdletBinding()]    
-Param    (        [Parameter(ValueFromPipelineByPropertyName = $true)]        [Alias('Filename', 'File', 'FullName', 'PsPath', 'Name', 'Directory')]         [string[]]        $Path = 'C:\Users\SWWCB\Documents'    )      
+Param    (        [Parameter(ValueFromPipelineByPropertyName = $true)]    
+[Alias('Filename', 'File', 'FullName', 'PsPath', 'Name', 'Directory')]        
+[string[]]       
+$Path = 'C:\Users\SWWCB\Documents'    )      
 Begin {     }      
 Process {         
-foreach ( $PathString in $Path ) {            $PathString = Resolve-Path -Path $PathString             $AccessRule = Get-Acl -Path $PathString |                Select-Object -ExpandProperty Access |                Get-FsmFileSystemAccess                    Foreach ($Rule in $AccessRule) {                $Props = @{}                $Props.Path = $PathString                $Props.Account = $Rule.Account                $Props.ReadAndExecute = $Rule.ReadAndExecute                $Props.FullControl = $Rule.FullControl                $Props.IsInherited = $Rule.IsInherited                $Props.InheritanceFlags = $Rule.InheritanceFlags                $Props.Modify = $Rule.Modify                                 $Description = New-Object -TypeName PSObject -Property $Props                Write-Output  -InputObject $Description            }        }    }    End { } #end End} #end function 
+foreach ( $PathString in $Path ) {  
+$PathString = Resolve-Path -Path $PathString    
+$AccessRule = Get-Acl -Path $PathString |                
+Select-Object -ExpandProperty Access |                
+Get-FsmFileSystemAccess                    
+Foreach ($Rule in $AccessRule) {                
+$Props = @{}                
+$Props.Path = $PathString                
+$Props.Account = $Rule.Account               
+$Props.ReadAndExecute = $Rule.ReadAndExecute               
+$Props.FullControl = $Rule.FullControl                
+$Props.IsInherited = $Rule.IsInherited              
+$Props.InheritanceFlags = $Rule.InheritanceFlags               
+$Props.Modify = $Rule.Modify                                
 
 
+                $Description = New-Object -TypeName PSObject -Property $Props                
+                Write-Output  -InputObject $Description            }        }    }   
+                End { } #end End} #end function 
 
 
 
