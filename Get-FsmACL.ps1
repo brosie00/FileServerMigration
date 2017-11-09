@@ -1,4 +1,4 @@
-﻿ 
+﻿
 <#
         .Synopsis
         Parses the Access Control List (ACL) and displays same.
@@ -24,8 +24,7 @@
         Show-ACL -Path $pwd | select Path, Account, IsContainer, FullControl, Modify, ReadAndExecute, IsInherited, InheritanceFlags | Sort-Object -Property Modify | ft -GroupBy Modify 
 
 #>
-function Get-FsmACL
-{
+function Join-FsmAccesswithFilePath {
     [CmdletBinding()]
     Param
     (
@@ -33,7 +32,6 @@ function Get-FsmACL
         [Alias('Filename', 'File', 'FullName', 'PsPath', 'Name', 'Directory')] 
         [string[]]
         $Path = 'C:\Users\SWWCB\Documents'
-
     )
   
     Begin {     }
@@ -43,7 +41,7 @@ function Get-FsmACL
             $PathString = Resolve-Path -Path $PathString 
             $AccessRule = Get-Acl -Path $PathString |
                 Select-Object -ExpandProperty Access |
-                Get-FileSystemAccess
+                Get-FsmFileSystemAccess
         
             Foreach ($Rule in $AccessRule) {
                 $Props = @{}
@@ -59,8 +57,6 @@ function Get-FsmACL
                 Write-Output  -InputObject $AccountObjects
             }
         }
-     
-
     }
     End { } #end End
 } #end function

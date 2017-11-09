@@ -1,7 +1,4 @@
-﻿
-
-
-<#
+﻿<#
 .Synopsis
    Uses CACLS rather then the Set-Acl
 .DESCRIPTION
@@ -16,9 +13,7 @@
    cacls.exe /?
 
 #>
-
 Function Set-FsmFileAccess {
-
     param ( 
         [Parameter(Mandatory = $true, 
             ValueFromPipeline = $true,
@@ -36,7 +31,6 @@ Function Set-FsmFileAccess {
             ValueFromPipeline = $true,
             ValueFromPipelineByPropertyName = $true, 
             ValueFromRemainingArguments = $false)]
-        [ValidatePattern( "ds\\" )]
         $SecurityGroup
     )
 
@@ -46,13 +40,10 @@ Function Set-FsmFileAccess {
         'FullControl' {"F"}
     }
     <#
-
         /t   : Changes DACLs of specified files in the current directory and all subdirectories. 
         /c   : Continues to change DACLs, ignoring errors. 
         /g   User  : permission    : Grants access rights to the specified user.      
         /p   User  : permission    : Replaces access rights for the specified user. 
-
     #>
     CACLS.exe $file /T /E /P  "${SecurityGroup}:${AccessRight}" 
-
 } 

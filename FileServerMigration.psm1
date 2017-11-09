@@ -1,11 +1,17 @@
-﻿# Get-ChildItem $psscriptroot\*.ps1 | ForEach-Object -Process { . $_.FullName }
+﻿
 
-. $psscriptroot\FsmShow-ACL.ps1
-. $psscriptroot\Get-FsmDirectoryMetaData.ps1
-. $psscriptroot\Import-FsmMetaDataHeader.ps1
-. $psscriptroot\New-FsmMetaDataHeader.ps1
+#Dot source all functions in all ps1 files located in the module folder
+Get-ChildItem -Path $PSScriptRoot\*.ps1 -Exclude *.tests.ps1, *profile.ps1 |
+    ForEach-Object {
+    . $_.FullName
+}
 
 Update-TypeData -TypeName 'System.IO.DirectoryInfo' -MemberType ScriptProperty -MemberName 'isMetaDataFile' -Value { if ( ( Get-item $this ).GetFiles() -match 'DirectoryMetaDataFile.txt' ) {$True} else {$false} }
 
- 
+Update-TypeData -AppendPath C:\Users\SWWCB\Documents\WindowsPowershell\Modules\FileServerMigration\FileInfo.types.ps1xml
+
+$MyInvocation.MyCommand.ScriptBlock.Module.OnRemove = { 
+    Remove-TypeData -Path C:\Users\SWWCB\Documents\WindowsPowershell\Modules\FileServerMigration\FileInfo.types.ps1xml
+}
+
 
