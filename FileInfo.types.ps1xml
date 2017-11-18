@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Types>
-  <Type>      
-  <Name>System.IO.DirectoryInfo</Name>   
-  <Members>      
-  <PropertySet>              
-    <Name>FsmDirectoryInfo</Name>            
-    <ReferencedProperties>               
-      <Name>LastWriteTime</Name>                 
-      <Name>Length</Name>   
-      <Name>Name</Name>              
-      <Name>isMetaDataFile</Name>        
-    </ReferencedProperties>  
-    </PropertySet>   
-    </Members> 
+  <Type>      
+  <Name>System.IO.DirectoryInfo</Name>   
+  <Members>      
+  <PropertySet>              
+    <Name>FsmDirectoryInfo</Name>            
+    <ReferencedProperties>               
+      <Name>LastWriteTime</Name>                 
+      <Name>Length</Name>   
+      <Name>Name</Name>              
+      <Name>isMetaDataFile</Name>        
+    </ReferencedProperties>  
+    </PropertySet>   
+    </Members> 
   </Type>
 </Types>
