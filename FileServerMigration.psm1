@@ -8,10 +8,9 @@ Get-ChildItem -Path $PSScriptRoot\*.ps1 -Exclude *.tests.ps1, *profile.ps1 |
 
 Update-TypeData -TypeName 'System.IO.DirectoryInfo' -MemberType ScriptProperty -MemberName 'isMetaDataFile' -Value { if ( ( Get-item $this ).GetFiles() -match 'DirectoryMetaDataFile.txt' ) {$True} else {$false} }
 
-Update-TypeData -AppendPath C:\Users\SWWCB\Documents\WindowsPowershell\Modules\FileServerMigration\FileInfo.types.ps1xml
+#Update-TypeData -AppendPath $PSScriptRoot\FileInfo.types.ps1xml 
 
-$MyInvocation.MyCommand.ScriptBlock.Module.OnRemove = { 
-    Remove-TypeData -Path C:\Users\SWWCB\Documents\WindowsPowershell\Modules\FileServerMigration\FileInfo.types.ps1xml
-}
+#$MyInvocation.MyCommand.ScriptBlock.Module.OnRemove = {  Remove-TypeData -Path $PSScriptRoot\FileInfo.types.ps1xml }
 
 
+ 
