@@ -10,7 +10,7 @@ Update-TypeData -TypeName 'System.IO.DirectoryInfo' -MemberType ScriptProperty -
 
 Update-TypeData -AppendPath $PSScriptRoot\FileInfo.types.ps1xml 
 
-#$MyInvocation.MyCommand.ScriptBlock.Module.OnRemove = {  Remove-TypeData -Path $PSScriptRoot\FileInfo.types.ps1xml }
+MyInvocation.MyCommand.ScriptBlock.Module.OnRemove = {  Remove-TypeData -Path $PSScriptRoot\FileInfo.types.ps1xml }
 
 
  
